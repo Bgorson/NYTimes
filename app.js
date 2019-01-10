@@ -3,7 +3,7 @@
 var query = "fda";
 var startDate = "201802007";
 var endDate = "20190506";
-var quantity;
+var quantity= 2;
 
 
 // submit  = searchArticle
@@ -26,7 +26,7 @@ function clearfunction(){ // take search form and clear everything with empty st
 
 }
 
-$("#clearButtton").on("click", function(){
+$("#clearButton").on("click", function(){
 
     clearfunction();
 
@@ -37,24 +37,23 @@ $("#clearButtton").on("click", function(){
 
 $("#searchArticle").on("click", function() {
   event.preventDefault(); // avoids reloading pg on submit
-  query = $("#termParameter")
-    .val()
-    .trim(); // store query input
+  query = $("#termParamter").val()
+    console.log(query)
+     // store query input
   startDate = $("#startYear")
     .val()
-    .trim();
+    
+   
   endDate = $("#endYear")
     .val()
-    .trim();
+    
   quantity = $("#numArticles").val();
 
-  url +=
-  "?" +
-  $.param({
+  url += "?" + $.param({
     "api-key": "b9f91d369ff59547cd47b931d8cbc56b:0:74623931",
-    q: query,
-    begin_date: startDate,
-    end_date: endDate
+    'q': query,
+    'begin_date': startDate,
+    'end_date': endDate
   });
 
 $.ajax({
