@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4 text-center"><i class ="fa ga-newspaper-o"></i>New York Times Search</h1>
+
+                        
+                    </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="form-inline justify-content-center">
+                    <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Search Term:</label>
+                            <input type="text" class="form-control" id="termParamter" placeholder=" ">
+                        </div>
+                    </div>
+                    </div>
+
+
+                        <div class="form-group">
+                            <label for="articleAmount">Number of Records to Retrieve</label>
+                            <select class="form-control" id="numArticles">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                                <label for="exampleFormControlInput1">Start Year (Optional):</label>
+                                <input type="text" class="form-control" id="startYear" placeholder=" ">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">End Year (Optional):</label>
+                            <input type="text" class="form-control" id="endYear" placeholder=" ">
+                    
+                        </div>    
+
+                </form>
+                <button id="searchArticle" type="button" class="btn btn-secondary">Search</button>
+                <button id = "clearButton" type="button" class="btn btn-secondary">Clear Results</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
