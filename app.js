@@ -1,8 +1,8 @@
 //=======================Global Variables==================
 
 var query = "fda";
-var startDate = "201802007";
-var endDate = "20190506";
+var startDate = '&begin_date=' + "201802007";
+var endDate = '&end_date='+  "20190506";
 var quantity= 2;
 
 
@@ -15,6 +15,7 @@ var quantity= 2;
 
 //=======================Global URL==============================
 var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+var api = "&api-key=b9f91d369ff59547cd47b931d8cbc56b:0:74623931"
 
 //=================================NY Functioning===========
 function clearfunction(){ // take search form and clear everything with empty string
@@ -37,24 +38,15 @@ $("#clearButton").on("click", function(){
 
 $("#searchArticle").on("click", function() {
   event.preventDefault(); // avoids reloading pg on submit
-  query = $("#termParamter").val()
-    console.log(query)
+  query = '?q=' + $("#termParamter").val()
+  
      // store query input
-  startDate = $("#startYear")
-    .val()
-    
-   
-  endDate = $("#endYear")
-    .val()
-    
+  // startDate = '&begin_date=' + $("#startYear").val()
+  // endDate = '&end_date='+ $("#endYear").val()
   quantity = $("#numArticles").val();
 
-  url += "?" + $.param({
-    "api-key": "b9f91d369ff59547cd47b931d8cbc56b:0:74623931",
-    'q': query,
-    'begin_date': startDate,
-    'end_date': endDate
-  });
+  url += query + startDate + endDate + api;
+  console.log(url)
 
 $.ajax({
   url: url,
